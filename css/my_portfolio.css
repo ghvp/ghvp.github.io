@@ -1,0 +1,279 @@
+/*GENERAL STYLING*/
+body {
+    margin: 0%;
+}
+
+/*Heading 1 elements*/
+h1{
+    text-transform: uppercase; 
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-top: 3%; /*adds a small margin above h1 elements*/
+    color: #1a1a1a;
+}
+
+/* Heading 1 elment hover*/
+h1:hover {
+    filter: grayscale(5%);
+    transform: scale(1.1);
+    transition: transform 1s;
+}
+
+/*styling for portfolio title text*/
+.white_text {
+    color: black;
+}
+
+/*  Paragraph elements */
+p {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/*paragraph element hover effect*/
+p:hover {
+    transition: transform 1s;
+    transform: scale(1.01);
+}
+
+/*center class - this applies to all elements with the class "center"*/
+.center {
+    text-align: center;
+}
+
+/* center class hover effect - this only affects the quote, github link, and footer*/
+.center:hover {
+    transition: transform 2s;
+    transform: scale(1.1);
+}
+
+/*Anchor elements*/
+a {
+    color: midnightblue;
+}
+
+/*quotation elements*/
+q {
+    font-style: oblique;
+}
+
+/*image elements*/
+img {
+    border-radius: 8px;
+    max-width: 100%;
+    height: 340px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*image element hover effects*/
+img:hover {
+    transition: transform 1s;
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 576px) {
+    img {
+        height: 100px;
+        margin-top: 150px;
+    }
+}
+
+/*styling for footer element*/
+footer {
+    padding: 2%;
+    background-color: blanchedalmond;
+}
+/*END OF GENERAL STYLING*/
+
+/*NAVBAR STYLING*/
+.Navbar {
+    overflow: hidden;
+    background-color: blanchedalmond;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    -webkit-animation: moveNav 5s;
+    animation: moveNav 5s;
+}
+
+/*moveNav animation effect for moving the navbar in from the left of the screen*/
+@keyframes moveNav {
+    from {left: -100vw;}
+    to {left: 0vw;}
+}
+
+/*Navbar links*/
+.Navbar a {
+    float: left;
+    display: block;
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    -webkit-animation: moveNavText 5.75s;
+    animation: moveNavText 5.75s;
+}
+
+/* moveNavText animation effect for moving the navabr text from above the view to the navbar*/
+@keyframes moveNavText {
+    from {top: -100vw;}
+    to {top: 0vw;}
+}
+
+/*screens 576px and smaller will display navbar links equally distributed*/
+@media screen and (max-width: 576px) {
+    .Navbar a{
+        width: 25%;
+        font-size: 12px;
+    }
+}
+
+/*Navbar hover effects*/
+.Navbar a:hover {
+    background-color: beige;
+    color: black;
+    font-weight: bold;
+} 
+
+/*navbar home button*/
+.Navbar a.active { /*this targets the element  on the navbar with the "active" class*/
+    background-color: beige;
+}
+/*END NAVBAR STYLING*/
+
+/*VIDEO STYLING*/
+/*formatting for background video*/
+#Typing_Video {
+    position: fixed;/*this was fixed before im gonna change to see if itll fix*/
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    z-index: -1 /*this places the video behind the other elements on the page*/
+}
+
+/*screens that are 576px and smaller will not display the background video*/
+@media screen and (max-width: 576px) {
+    #Typing_Video {
+        display: none;
+    }
+}
+
+/*Texts over the video*/
+.Video_Text {
+    background: rbga(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    padding: 20px;
+    position: relative; /* This sets the text relative to its normal positioning, allowing us to use the animation below */
+    -webkit-animation: moveVideoText 5.75s;
+    animation: moveVideoText 5.75s;
+}
+
+/*this animation effct causes the overlay video text to move up from the bottom of the page upon page load*/
+@keyframes moveVideoText {
+    from{top: -100vw;}
+    to{top: 0vw;}
+}
+/*END OF VIDEO STYLING*/
+
+/*TABLE STYLING*/
+* {
+    box-sizing: border-box; /*This creates a box within a border within which most of the text will be placed*/
+}
+
+.Column_1 {
+    float: left;
+    width: 50%; /*this ensures the column only takes up half the page width*/
+    padding: 10px;
+    padding-top: 3%;
+    height: 400px;
+    background-color: floralwhite;
+}
+
+@media screen and (max-width: 576px) {
+    .Column_1 {
+        overflow: auto;
+    }
+}
+
+.Column_2 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 2%;
+    height: 400px;
+    background-color: oldlace;
+}
+
+.Column_tall {
+    padding-top: 3.5%;
+    height: 450px;
+}
+
+/*This insertes somethinb after the content of selected elements*/
+.Row:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+/*END OF TABLE STYLING*/
+
+/*CONTACT FORM STYLING*/
+input[type=text] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*hover effects for input boxes*/
+input[type=text]:hover {
+    box-shadow: 0 0 5px lightblue inset;
+}
+
+/*submit button*/
+input[type=submit] {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;/*allows submit button to be centered*/
+    margin-left: auto;
+    margin-right: auto;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+} 
+
+/*hover effect for submit button*/
+input[type=submit]:hover {
+    background-color: lightcyan;
+    color: white;
+    transform: scale(1.5);
+    transition: transform 1.5s;
+}
+
+/*form element*/
+form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+/*END OF CONTACT FORM STYLING*/

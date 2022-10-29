@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width" />
+        <title>Vivienne Padilla</title>
+        <link rel="stylesheet" type="text/css" href="./css/my_portfolio.css">
+    </head>
+
+
+    <body class="Background">
+
+        <!--Navbar-->
+        <div class="Navbar">
+            <a class="active" href="#Home">Home</a>
+            <a href="#About">About</a>
+            <a href="#GitHub">GitHub</a>
+            <a href="#Contact">Contact</a>
+        </div>
+
+        <!--These are breaks to add space betweem navbar and the first heading-->
+        <br>
+        <br>
+
+        <!--Background video-->
+        <div id="Home">
+            <video autoplay muted loop id="Typing_Video">
+                <source src="./Images/typing_video.mp4" type="video/mp4"> <!--revisit this to make sure it doesnt take up the whole screen after css is added-->
+                <!--this displays a message if the video fails to run-->
+                Your browser does not support this HTML5 video.
+            </video>
+        </div>
+
+        <!--video text-->
+        <div class="Video_text">
+            <h1 class="white_text">Vivienne's Portfolio</h1><!--you can change white text to any color just there for copying sake amy assigned thing like this is just for copying sake-->
+            <strong>
+                <p class="center">
+                    <q>Insert a quote here whwen you find one about programming</q>
+                        <br> if necessary when quote is added
+                        <br>-quote person
+                        <br> <!--this is for space -->
+                        <br>My name is Vivienne Padilla. Welcome to my portfolio website! On this website, I will tell you about my background and experience.
+                        <br>
+                        <br>Thank you for stopping by and enjoy.
+                </p>
+            </strong>
+        </div>
+
+        <!--about section-->
+        <div class="Row" id="About">
+            <!--left column-->
+            <div class="Column_2">
+                <img src="./Images/about.jpg" alt="Computer setup with code on various monitors">
+            </div>
+            <!--right column-->
+            <div class="Column_1">
+                <h1>About</h1>
+                <p>
+                    Hello! My name is Vivienne Padilla, and I'm a software developer who loves to code! <!--flesh this out a bit later>-->
+                    <br>
+                    <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>'s Software Developer Boot Camp, and trained and experienced in the following web programing languages: HTML, CSS, Javascript, SQL, C#, and more.
+                    <br>
+                    <br> I am a full-stack developer and would be thrilled to work with you on your project. <a href="#Contact">Contact</a> me below!
+                </p>
+            </div>
+        </div>
+
+        <!--GitHub section-->
+        <div class="Row" id="GitHub">
+            <!--Left column-->
+            <div class="Column_1">
+                <h1>GitHub</h1>
+                <p>
+                    You can view my beginning and most recent coding projects on my GitHub profile here:
+                    <br>
+                    <p class="center"><a href="https://github.com/ghvp" target="_blank">My github account</a></p>
+                </p>
+            </div>
+            <!--right column-->
+            <div class="Column_2">
+                <a href="https://github.com/ghvp" target="_blank"><img src="./images/github.png" alt="GitHub logo"></a>
+            </div>
+        </div>
+
+        <!--Contact information-->
+        <div class="Row" id="Contact">
+            <!--contact, image, left column-->
+            <div class="Column_2 Column_tall">
+                <img src="./Images/contact.jpg" alt="Contact_Image">
+            </div>
+            <!--Contact form, right column-->
+            <div class="Column_1 Column_tall">
+                <h1>Contact</h1>
+                <!--this specifies where and how to send the form data; it will be left blank-->
+                <form action="https://formspree.io/f/myyvnblk" method="POST"><!--this is where a third party will be used to retrieve submitted contact form data-->
+                    <label>Name:</label>
+                        <input type="text" placeholder="Enter your name here">
+                    <label>Email:</label>
+                        <input type="text" id="Email" name="Email" placeholder="Enter email here">
+                    <label>Message:</label>
+                        <input type="text" id="Message" name="Message" placeholder="Enter your message here">
+                        <input type="submit" value="SUBMIT">
+                </form>
+            </div>
+        </div>
+
+        <!--Footer section-->
+        <footer>
+            <p>
+                <p class="center">Thank you for visiting my portfolio website, I look forward to working with you in the future.</p>
+                <br>
+            </p>
+        </footer>
+    </body>
+</html>
