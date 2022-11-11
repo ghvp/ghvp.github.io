@@ -14,19 +14,22 @@
         <!--Navbar-->
         <div class="Navbar">
             <a class="active" href="#Home">Home</a>
+            <!--New slideshow added-->
+            <a href="Slideshow">Slideshow</a>
             <a href="#About">About</a>
             <a href="#GitHub">GitHub</a>
-            <a href="#Contact">Contact</a>
+            <!--Onclick and ondblclick functions were added to open the contact form -->
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
         </div>
 
-        <!--These are breaks to add space betweem navbar and the first heading-->
+        <!--These are breaks to add space between navbar and the first heading-->
         <br>
         <br>
 
         <!--Background video-->
         <div id="Home">
             <video autoplay muted loop id="Typing_Video">
-                <source src="./images/typing_video.mp4" type="video/mp4"> <!--revisit this to make sure it doesnt take up the whole screen after css is added-->
+                <source src="./Images/typing_video.mp4" type="video/mp4"> <!--revisit this to make sure it doesnt take up the whole screen after css is added-->
                 <!--this displays a message if the video fails to run-->
                 Your browser does not support this HTML5 video.
             </video>
@@ -37,9 +40,9 @@
             <h1 class="white_text">Vivienne's Portfolio</h1><!--you can change white text to any color just there for copying sake amy assigned thing like this is just for copying sake-->
             <strong>
                 <p class="center">
-                    <q>Insert a quote here whwen you find one about programming</q>
-                        <br> if necessary when quote is added
-                        <br>-quote person
+                    <q>Testing leads to failure, and
+                        <br>failure leads to understanding.</q>
+                        <br>-Burt Rutan
                         <br> <!--this is for space -->
                         <br>My name is Vivienne Padilla. Welcome to my portfolio website! On this website, I will tell you about my background and experience.
                         <br>
@@ -48,11 +51,60 @@
             </strong>
         </div>
 
+     <!--Slide show section was added!-->
+    <div id="Slideshow">
+        <div id="Slideshow_Background">
+            <div id="Slideshow_Container">
+                <!--slide 1 of 6-->
+                <div class="mySlides fade">
+                    <div class="text">I'm available to assist you on your projects!</div>
+                </div>
+                <!--2/6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="images/html_css_js.png" alt="HTML, CSS, and JS logos">
+                    <div class="text">I'm a full-stack software developer, <br> trained in:<br>HTML, CSS, JavaScript,</div>
+                </div>
+                <!--3/6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="images/python.png" alt="python logo">
+                    <div class="text">the popular programming language Python,</div>
+                </div>
+                <!--4/6-->
+                <div class="mySlides fade">
+                    <div class="text">C#, .NET Framework, ASP.NET, MVC </div>
+                </div>
+                <!--5/6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="images/sql.png" alt="SQL logo">
+                    <div class="text">back end development, databases and SQL.</div>
+                </div>
+                <!--6/6-->
+                <div class="mySlides fade">
+                     <div class="text"><a class="white-text contact" onclick="openForm()">Contact me here!</a></div>
+                </div>
+                <!--previous and next buttons-->
+                <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br><!--adds a space between the slideshow images and the dots-->
+            <!-- slide show dots-->
+            <div style="text-align: center;">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span> 
+                <span class="dot" onclick="currentSlide(4)"></span> 
+                <span class="dot" onclick="currentSlide(5)"></span> 
+                <span class="dot" onclick="currentSlide(6)"></span> 
+            </div>
+        </div>
+    </div>
+    <!--END slideshow section-->
+
         <!--about section-->
         <div class="Row" id="About">
             <!--left column-->
             <div class="Column_2">
-                <img src="./images/about.jpg" alt="Computer setup with code on various monitors">
+                <img src="./Images/about.jpg" alt="Computer setup with code on various monitors">
             </div>
             <!--right column-->
             <div class="Column_1">
@@ -85,24 +137,23 @@
         </div>
 
         <!--Contact information-->
-        <div class="Row" id="Contact">
-            <!--contact, image, left column-->
-            <div class="Column_2 Column_tall">
-                <img src="./images/contact.jpg" alt="Contact_Image">
-            </div>
-            <!--Contact form, right column-->
-            <div class="Column_1 Column_tall">
-                <h1>Contact</h1>
-                <!--this specifies where and how to send the form data; it will be left blank-->
-                <form action="https://formspree.io/f/myyvnblk" method="POST"><!--this is where a third party will be used to retrieve submitted contact form data-->
-                    <label>Name:</label>
-                        <input type="text" placeholder="Enter your name here">
-                    <label>Email:</label>
-                        <input type="text" id="Email" name="Email" placeholder="Enter email here">
-                    <label>Message:</label>
-                        <input type="text" id="Message" name="Message" placeholder="Enter your message here">
-                        <input type="submit" value="SUBMIT">
-                </form>
+        <div id="Contact">
+            <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+            <div class="form-popup" id="myForm">
+                 <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="form-container">
+                     <h1>Contact</h1>
+                     <label for="name"><b>Name</b></label>
+                       <input type="text" placeholder="Type your name here" name="name" required>
+                     <label for="phone"><b>Phone</b></label>
+                       <input type="text" placeholder="Type your phone number here" name="phone">
+                     <label for="email"><b>Email</b></label>		
+                       <input type="text" placeholder="Type your email address here" name="email" required>
+                     <label for="message"><b>Message</b></label>
+                       <input type="text" placeholder="Type your message here" name="message">
+          
+                     <button type="submit" class="btn">SUBMIT</button>
+                     <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                 </form>
             </div>
         </div>
 
@@ -113,5 +164,6 @@
                 <br>
             </p>
         </footer>
+        <script src="JS/my_portfolio.js"></script>
     </body>
 </html>
